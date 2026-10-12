@@ -1,7 +1,37 @@
-The current scores are deliberately conservative and transparent. They reflect documented financing facilitation in South Africa and the active insurgency in Mozambique while showing the very low baseline in Namibia and Zimbabwe.
+# Southern Africa Tracker
 
-Website focused on verifiable demographic trends, documented Islamist extremism, and financing links in southern Africa, with emphasis on South Africa, Namibia, Zimbabwe, Malawi, and necessary context from Mozambique (the main kinetic hotspot).Design principles (truth-seeking)Only public, citable data (Pew, national censuses, UN Monitoring Team reports, US Treasury designations, IEC decisions, open-source security reporting).
-Clear separation of: demography → political advocacy → financing of foreign groups → actual violence.
-Transparent scoring: every 0–100 metric shows the raw number + source. Composite “risk” is a simple weighted average the user can inspect and change.
-No narrative of inevitable “Islamic state takeover.” The data show low baseline risk in Namibia/Zimbabwe, modest minority presence in South Africa/Malawi, and the real regional concern centered on Cabo Delgado (Mozambique) + South African financial facilitation.
+Factual public-data dashboard tracking **Muslim demographics**, **documented Islamist extremism**, and **financing links** in southern Africa (South Africa, Namibia, Zimbabwe, Malawi + Mozambique context).
 
+All metrics use open sources (Pew, censuses, UN Monitoring Team, US Treasury, etc.). Transparent scoring. No login required.
+
+---
+
+### 🔗 Live Dashboard
+
+[![Open Tracker](https://img.shields.io/badge/Open-ISLAM.html-3b82f6?style=for-the-badge&logo=html5&logoColor=white)](./ISLAM.html)
+
+Or click here: **[Open ISLAM.html](./ISLAM.html)**
+
+---
+
+## What’s included
+
+- Country snapshots with transparent 0–100 scores  
+- Composite regional risk indicator  
+- Documented financing facilitation (South Africa)  
+- Cabo Delgado / Islamic State Mozambique context  
+- Standard counter-measure notes  
+
+## How to use
+
+1. Clone or download this repo  
+2. Open `ISLAM.html` in any browser  
+3. Or deploy the whole folder to Netlify / GitHub Pages / Cloudflare Pages for a public URL  
+
+## Sources
+
+Pew Research, national censuses, UN Security Council Monitoring Team reports, US Treasury OFAC designations, South African IEC decisions, and open-source security reporting.
+
+---
+
+Public informational site. Data is factual and sourced. Methodology is fully visible in the page source.
