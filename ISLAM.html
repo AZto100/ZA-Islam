@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Southern Africa – Islamist Extremism, Financing & Demographics Tracker</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --card: #1a2332;
+      --text: #e7ecf3;
+      --muted: #8b9bb4;
+      --accent: #3b82f6;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+      --ok: #22c55e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.25rem; margin: 2rem 0 0.75rem; color: var(--accent); }
+    p, li { color: var(--muted); margin-bottom: 0.75rem; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 1px solid #2a3548;
+    }
+    .metric { display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0; }
+    .bar {
+      height: 8px;
+      background: #2a3548;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 0.35rem;
+    }
+    .fill { height: 100%; border-radius: 4px; transition: width 0.4s; }
+    .total {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1rem 0;
+    }
+    .sources { font-size: 0.85rem; color: var(--muted); margin-top: 2rem; }
+    a { color: var(--accent); }
+    .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-right: 0.35rem; }
+    .tag-ok { background: #14532d; color: #86efac; }
+    .tag-warn { background: #78350f; color: #fcd34d; }
+    .tag-danger { background: #7f1d1d; color: #fca5a5; }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #2a3548; font-size: 0.9rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <h1>Southern Africa Tracker</h1>
+  <p>Factual public-data dashboard: Muslim demographics, documented Islamist extremism, and financing links. Focus countries: South Africa, Namibia, Zimbabwe, Malawi + Mozambique context. Updated with open sources as of late 2025 / early 2026.</p>
+
+  <div class="card" style="margin: 1.5rem 0;">
+    <h2 style="margin-top:0">Composite Regional Risk Indicator</h2>
+    <div class="total" id="totalRisk">—</div>
+    <p style="text-align:center; font-size:0.9rem;">Simple average of country scores (0–100). Transparent formula in the JS. Not a prediction of “takeover.”</p>
+  </div>
+
+  <h2>Country Snapshots</h2>
+  <div class="grid" id="countries"></div>
+
+  <h2>Key Documented Issues</h2>
+  <div class="card">
+    <ul>
+      <li><strong>South Africa financing node</strong>: UN Monitoring Team and US Treasury have repeatedly flagged SA as a conduit for Islamic State funds to African affiliates (including Mozambique). Multiple individuals sanctioned (e.g. 2022 designations). Cash-intensive informal economy and grey-listing history (FATF) increase vulnerability. No large-scale domestic attacks in recent years, but facilitation risk is real.</li>
+      <li><strong>Mozambique (Cabo Delgado)</strong>: Active Islamic State Mozambique (ISM) insurgency since ~2017. Thousands killed, hundreds of thousands displaced. Explicit goal of sharia rule in areas of influence. Main kinetic threat in southern Africa.</li>
+      <li><strong>Political advocacy</strong>: Fringe parties/groups in South Africa have sought to register platforms that include sharia elements; at least one “Islamic State of Africa”-style application was rejected by the Electoral Commission as incompatible with the secular constitution.</li>
+      <li><strong>Demography</strong>: Muslim populations remain small minorities except in Malawi (~13–20%). No evidence of rapid demographic shift toward majority status in the four focus countries.</li>
+    </ul>
+  </div>
+
+  <h2>Counter-measures (standard democratic tools)</h2>
+  <div class="card">
+    <ul>
+      <li>Strengthen Financial Intelligence Units and AML/CFT enforcement (address FATF gaps).</li>
+      <li>Transparent foreign funding rules for religious and civil-society organisations.</li>
+      <li>Maintain secular constitutional standards for party registration and education curricula.</li>
+      <li>Regional security cooperation on Cabo Delgado and cross-border facilitation networks.</li>
+      <li>Public data transparency: regular publication of demographics, terror designations, and court outcomes.</li>
+    </ul>
+  </div>
+
+  <div class="sources">
+    <strong>Primary sources used</strong>: Pew Research religious composition (2010–2020 updates), national censuses, UN Security Council Monitoring Team reports on ISIL, US Treasury OFAC designations, South African IEC decisions, open-source security reporting (Daily Maverick, DefenceWeb, etc.). Numbers are approximate and rounded; always check the latest official release.
+  </div>
+
+  <footer>
+    Public informational site. No login. Data is factual and sourced. Methodology and weights are fully visible in the page source. Contributions or corrections via public data only.
+  </footer>
+
+  <script>
+    // === FACTUAL DATA (replace with newer public figures as available) ===
+    const data = [
+      {
+        name: "South Africa",
+        muslimPct: 1.9,
+        notes: "Largest absolute Muslim population in the group (~1.1–1.2 M). Documented IS financing facilitation. Fringe sharia-advocacy parties exist but remain marginal.",
+        extremism: 25,   // financing + fringe politics, low domestic violence
+        financing: 55,   // clear UN/US flags
+        political: 20,
+        demography: 10
+      },
+      {
+        name: "Namibia",
+        muslimPct: 0.4,
+        notes: "Very small community. No significant documented extremism or financing activity.",
+        extremism: 5,
+        financing: 5,
+        political: 5,
+        demography: 5
+      },
+      {
+        name: "Zimbabwe",
+        muslimPct: 0.7,
+        notes: "Small community. No major Islamist violence or financing nodes reported.",
+        extremism: 5,
+        financing: 5,
+        political: 5,
+        demography: 5
+      },
+      {
+        name: "Malawi",
+        muslimPct: 15,
+        notes: "Largest relative Muslim minority of the four. Local tensions occasional; no IS-style insurgency.",
+        extremism: 15,
+        financing: 10,
+        political: 15,
+        demography: 40
+      },
+      {
+        name: "Mozambique (context)",
+        muslimPct: 19,
+        notes: "Cabo Delgado ISM insurgency is the primary active threat in southern Africa. Explicit sharia goals in areas of control/influence.",
+        extremism: 75,
+        financing: 40,
+        political: 50,
+        demography: 45
+      }
+    ];
+
+    // Simple transparent scoring (weights can be adjusted)
+    function countryScore(c) {
+      // Weighted: extremism 35%, financing 30%, political 20%, demography 15%
+      return Math.round(
+        c.extremism * 0.35 +
+        c.financing * 0.30 +
+        c.political * 0.20 +
+        c.demography * 0.15
+      );
+    }
+
+    function colorFor(score) {
+      if (score < 20) return "var(--ok)";
+      if (score < 40) return "var(--warn)";
+      return "var(--danger)";
+    }
+
+    function tagFor(score) {
+      if (score < 20) return '<span class="tag tag-ok">Low</span>';
+      if (score < 40) return '<span class="tag tag-warn">Elevated</span>';
+      return '<span class="tag tag-danger">High</span>';
+    }
+
+    // Render
+    const container = document.getElementById("countries");
+    let total = 0;
+
+    data.forEach(c => {
+      const score = countryScore(c);
+      total += score;
+
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `
+        <h3>${c.name} ${tagFor(score)}</h3>
+        <p style="font-size:0.9rem; margin:0.5rem 0;">Muslim pop. ≈ <strong>${c.muslimPct}%</strong></p>
+        <p style="font-size:0.85rem;">${c.notes}</p>
+        <div class="metric"><span>Extremism / violence</span><span>${c.extremism}</span></div>
+        <div class="bar"><div class="fill" style="width:${c.extremism}%; background:${colorFor(c.extremism)}"></div></div>
+        <div class="metric"><span>Financing risk</span><span>${c.financing}</span></div>
+        <div class="bar"><div class="fill" style="width:${c.financing}%; background:${colorFor(c.financing)}"></div></div>
+        <div class="metric"><span>Political advocacy</span><span>${c.political}</span></div>
+        <div class="bar"><div class="fill" style="width:${c.political}%; background:${colorFor(c.political)}"></div></div>
+        <div class="metric"><span>Demographic weight</span><span>${c.demography}</span></div>
+        <div class="bar"><div class="fill" style="width:${c.demography}%; background:${colorFor(c.demography)}"></div></div>
+        <div class="metric" style="margin-top:1rem; font-weight:600;"><span>Country score</span><span>${score}/100</span></div>
+      `;
+      container.appendChild(card);
+    });
+
+    document.getElementById("totalRisk").textContent =
+      Math.round(total / data.length) + " / 100";
+  </script>
+</body>
+</html>
