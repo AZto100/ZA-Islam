@@ -8,8 +8,6 @@ All metrics use open sources (Pew, censuses, UN Monitoring Team, US Treasury, et
 
 ### 🔗 Live Dashboard
 
-(https://azto100.github.io/ZA-Islam/)/ISLAM.html)
-
 Click here: **[Open ISLAM Dashboard] (https://azto100.github.io/ZA-Islam/ISLAM.html)**
 
 ---
