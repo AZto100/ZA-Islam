@@ -8,9 +8,9 @@ All metrics use open sources (Pew, censuses, UN Monitoring Team, US Treasury, et
 
 ### 🔗 Live Dashboard
 
-[![Open Tracker](https://img.shields.io/badge/Open-ISLAM.html-3b82f6?style=for-the-badge&logo=html5&logoColor=white)](./ISLAM.html)
+(https://azto100.github.io/ZA-Islam/)/ISLAM.html)
 
-Or click here: **[Open ISLAM.html](./ISLAM.html)**
+Click here: **[Open ISLAM Dashboard] (https://azto100.github.io/ZA-Islam/ISLAM.html)**
 
 ---
 
